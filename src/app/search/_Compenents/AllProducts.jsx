@@ -35,7 +35,7 @@ function AllProducts({ product }) {
               <div className="bg-[#f9f9f9]  flex items-center justify-center p-10 overflow-hidden">
                {item?.media?.url ? 
                 <Image
-                  src={`http://localhost:1337${item?.media?.url}`}
+                  src={item?.media?.url}
                   alt={item?.title || "product"}
                   width={350}
                   height={350}

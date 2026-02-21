@@ -17,10 +17,10 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata = {
-  title: "BiG-Store", // غير الاسم لاسم متجرك
+  title: "Bigstore", // غير الاسم لاسم متجرك
   description: "Explore the best products in our store",
   icons: {
-    icon: "/shoes-1.avif", // سيقوم Next.js بالبحث عن هذا الملف في مجلد public
+    icon: "/hat-1.avif", // سيقوم Next.js بالبحث عن هذا الملف في مجلد public
   }
 };
 

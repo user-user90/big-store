@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const basUrl = "http://localhost:1337/api/";
+const basUrl ="https://devoted-sparkle-117ce00640.strapiapp.com";
 const ApiKey = process.env.NEXT_PUBLIC_API_KEY;
 
 const axiosClient = axios.create({
@@ -10,32 +10,32 @@ const axiosClient = axios.create({
   },
 });
 //    ## Get NavBar ##
-const getNavbar = async () => await axiosClient.get("navbars");
+const getNavbar = async () => await axiosClient.get("/api/navbars");
 //   ##  GET HERO SECTION ##
-const getHeroSection = async () => await axiosClient.get("products?populate=*");
+const getHeroSection = async () => await axiosClient.get("/api/products?populate=*");
 // ## GET ALL PRODUCTS ##
 const getProducts = async () => 
-  await axiosClient.get("allproducts?sort[0]=createdAt:desc&populate=*");
+  await axiosClient.get("/api/allproducts?sort[0]=createdAt:desc&populate=*");
 // ## GET FOOTER 1 ##
-const getFooter = async () => await axiosClient.get("footers");
+const getFooter = async () => await axiosClient.get("/api/footers");
 // ## GET PRODUCT BY ID ##
 const getProductById = async (documentId) =>
-  await axiosClient.get(`/allproducts/${documentId}?populate=*`);
+  await axiosClient.get(`/api/allproducts/${documentId}?populate=*`);
 // ## GET PRODUCT BY CATEGORY
 const getProductByCategory = async (category) =>
   await axiosClient.get(
-    `allproducts?filters[category][$eq]=${category}&populate=*`)
+    `/api/allproducts?filters[category][$eq]=${category}&populate=*`)
   // ## CARTE
-  const cartUser=async(data)=>await axiosClient.post("/cartes",data)
+  const cartUser=async(data)=>await axiosClient.post("/api/cartes",data)
   // ## get USER ITEM
-  const getUserItem=async(email)=>await axiosClient.get( `/cartes?populate[allproducts][populate][0]=media&filters[email][$eq]=${email}`)
+  const getUserItem=async(email)=>await axiosClient.get(`/api/cartes?populate[allproducts][populate][0]=media&filters[email][$eq]=${email}`)
   // ## DELETE ITEM USER CART ##
-  const deleteItemCart=async(documentId)=>await axiosClient.delete(`/cartes/${documentId}`)
+  const deleteItemCart=async(documentId)=>await axiosClient.delete(`/api/cartes/${documentId}`)
   // ## GET SLIDER PRODUCTS SEARCH ## 
-  const getSliderProduct=async()=>await axiosClient.get("/sliderproducts?populate=*")
+  const getSliderProduct=async()=>await axiosClient.get("/api/sliderproducts?populate=*")
     // ## GET FOOTER DETAILS ## 
   const getFooterDetails=async (category) =>
-  await axiosClient.get(`/fotterdetails?filters[category][$eq]=${category}&populate=*`)
+  await axiosClient.get(`/api/fotterdetails?filters[category][$eq]=${category}&populate=*`)
 
 
 

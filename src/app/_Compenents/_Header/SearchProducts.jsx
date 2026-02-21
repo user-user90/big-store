@@ -72,7 +72,7 @@ function SearchProducts({ closMenu }) {
                   <div className="bg-gray-50 p-2 rounded-lg w-16 h-16 flex-shrink-0">
                     <Image
                       alt={item?.title || "Product"}
-                      src={`http://localhost:1337${item?.media?.url}`}
+                      src={item?.media?.url}
                       width={60}
                       height={60}
                       className="object-contain group-hover:scale-110 transition-transform"

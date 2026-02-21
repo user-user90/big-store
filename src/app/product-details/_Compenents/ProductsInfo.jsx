@@ -9,7 +9,6 @@ import toast from "react-hot-toast"
 
 function ProductsInfo({product}) {
   // ## Image
-  const ImageUrl=`http://localhost:1337${product?.media?.url}`
   //  ## ADD CART ZUSTAND
   const addToCart=useStore((state)=>state.addToCart)
   // ## isLoggend
@@ -52,7 +51,7 @@ function ProductsInfo({product}) {
        <div className="my-0 md:my-4">
         {product?.media?.url?(
           <Image
-        src={ImageUrl}
+        src={product?.media?.url}
         alt={product?.title || "Product"}
         width={600}
         height={400}

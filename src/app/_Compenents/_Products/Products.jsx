@@ -38,7 +38,7 @@ function Products({ product }) {
                 {item?.media?.url ? (
                   <Image
                     alt={item?.title || "Product"}
-                    src={`http://localhost:1337${item?.media?.url}`}
+                    src={item?.media?.url}
                     fill
                     className='object-contain hover:scale-105 transition-all duration-300'
                   />

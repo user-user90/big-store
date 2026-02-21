@@ -8,5 +8,4 @@ async function Home({ params }) {
     </section>
   );
 }
-
 export default Home;

@@ -88,7 +88,7 @@ function CartUserItems({ onClose }) {
                     {/* ## IMAGE ## */}
                     <div className="border border-gray-300 bg-transparent p-1 shadow-sm rounded-lg overflow-hidden w-20 h-20 flex-shrink-0">
                       <Image
-                        src={`http://localhost:1337${item?.media?.url}`}
+                        src={item?.media?.url}
                         alt={item?.title || "product"}
                         width={80}
                         height={80}

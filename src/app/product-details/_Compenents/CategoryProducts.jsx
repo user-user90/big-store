@@ -29,7 +29,7 @@ function CategoryProducts({ product }) {
         {products?.length > 0 ? (
           products?.map((item) => (
             <Link 
-              href={`/product-details/${item?.documentId}`} 
+              href={item?.documentId}
               key={item?.documentId} 
               className='relative bg-white min-w-[350px] md:min-w-[450px] h-[200px] border border-gray-300 hover:border-blue-700 transition-all duration-300 rounded-lg overflow-hidden shadow-sm'
             >
@@ -39,7 +39,7 @@ function CategoryProducts({ product }) {
                 {item?.media?.url ? (
                   <Image
                     alt={item?.title || "Product"}
-                    src={`http://localhost:1337${item?.media?.url}`}
+                    src={item?.media?.url}
                     fill
                     className='object-contain hover:scale-105 transition-all duration-300'
                   />
