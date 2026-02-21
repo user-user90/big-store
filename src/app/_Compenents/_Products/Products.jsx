@@ -37,6 +37,7 @@ function Products({ product }) {
                 {/* حماية رابط الصورة لضمان عدم حدوث Invalid URL */}
                 {item?.media?.url ? (
                   <Image
+                     priority
                     alt={item?.title || "Product"}
                     src={item?.media?.url}
                     fill
@@ -60,7 +61,9 @@ function Products({ product }) {
         ) : (
           /* SKELETON LOADING */
           [1, 2, 3, 4].map((id) => (
-            <div key={id} className='bg-gray-200 min-w-[350px] md:min-w-[450px] h-[200px] border border-gray-200 animate-pulse rounded-lg'></div>
+            <div key={id} className='flex justify-center items-center bg-gray-200 min-w-[350px] md:min-w-[450px] h-[200px] border border-gray-200 animate-pulse rounded-lg'>
+              <span className='border-2 w-5 h-5 border-blue-800 border-t-transparent rounded-full animate-spin'></span>
+            </div>
           ))
         )}
       </div>

@@ -96,13 +96,25 @@ function Navbar(onClose) {
           
           {/* ## SEARCH ACTION BUTTON */}
           <button 
+          aria-label="search Product"
             onClick={() => setOpenSearch(true)}
             className="p-2 text-gray-600 hover:text-black hover:bg-gray-100 rounded-full transition-all"
           >
             <CiSearch size={24} />
           </button>
 
-          {/* ## SHOPPING CART DROPDOWN SECTION */}
+      
+
+          {/* ## USER AUTHENTICATION ACTIONS */}
+          {!isSignedIn ? (
+            <Link href={"/sign-in"} className="text-gray-600 hover:text-black">
+              <FaUserAlt size={18} />
+            </Link>
+          ) : (
+            // ## Button User && Cart shop
+            <div className="flex items-center gap-2">
+            
+                {/* ## SHOPPING CART DROPDOWN SECTION */}
           <div className="relative">
             <div 
               onClick={() => setClosCart(!closCart)} 
@@ -117,18 +129,13 @@ function Navbar(onClose) {
               )}
             </div>
             {/* ## CART ITEMS LIST COMPONENT */}
-            {!closCart && <div>
+            {!closCart && <div className="">
               <CartUserItems onClose={()=>setClosCart(!closCart)} />
             </div> }
           </div>
-
-          {/* ## USER AUTHENTICATION ACTIONS */}
-          {!isSignedIn ? (
-            <Link href={"/sign-in"} className="text-gray-600 hover:text-black">
-              <FaUserAlt size={18} />
-            </Link>
-          ) : (
-            <UserButton  />
+          {/* ### USER  BUTTON  */}
+          <UserButton  />
+            </div>
           )}
         </div>
       </nav>
@@ -138,6 +145,7 @@ function Navbar(onClose) {
         <div className="z-50">
           <SearchProducts closMenu={() => setOpenSearch(!openSearch)} />
         </div>
+        
       )}
 
       {/* ## MOBILE NAVIGATION SIDEBAR OVERLAY */}

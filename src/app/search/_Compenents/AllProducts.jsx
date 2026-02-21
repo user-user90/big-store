@@ -42,7 +42,7 @@ function AllProducts({ product }) {
                   className="object-contain h-full w-full group-hover:scale-110 transition-transform duration-700 ease-in-out"
                 />
                :
-               <span className="flex items-center justify-center rounded-md animate-pulse  w-[400px] h-[300px]">
+               <span className="flex items-center justify-center rounded-md animate-pulse  w-[400px] h-[300px] ">
                 Loading...
                </span>
                }
@@ -67,7 +67,7 @@ function AllProducts({ product }) {
         ) : (
          <div className="flex h-[80vh]  gap-2">
           <h2 className="w-5 h-5 border-2 border-blue-600 border-t-transparent rounded-full animate-spin"></h2>
-          <p className="text-gray-800">Loading...</p>
+          <p className="text-gray-600 animate-pulse">Loading...</p>
          </div>
         )}
       </div>

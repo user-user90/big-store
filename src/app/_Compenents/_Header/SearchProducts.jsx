@@ -71,6 +71,7 @@ function SearchProducts({ closMenu }) {
                   {/* ## PRODUCT IMAGE CONTAINER */}
                   <div className="bg-gray-50 p-2 rounded-lg w-16 h-16 flex-shrink-0">
                     <Image
+                    property=""
                       alt={item?.title || "Product"}
                       src={item?.media?.url}
                       width={60}

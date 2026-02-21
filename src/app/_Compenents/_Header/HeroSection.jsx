@@ -30,12 +30,13 @@ async function HeroSection() {
               <div className="relative w-full h-full p-8 md:p-12">
                {item?.media?.url ?
                 <Image
+                  
                   alt={item?.title || "product"}
                   src={item?.media?.url}
                   fill
                   className="object-contain transition-transform duration-700 group-hover:scale-110"
                   sizes={index === 0 ? "60vw" : "25vw"}
-                  priority={index === 0}
+                  priority
                   quality={100}
                 />
                 :

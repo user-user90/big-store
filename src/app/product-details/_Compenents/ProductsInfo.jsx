@@ -60,7 +60,9 @@ function ProductsInfo({product}) {
         />
         ):
         // ## SKELETON 
-         (<div className="w-full  md:w-[600px] h-[500px] bg-gray-200 rounded-2xl animate-pulse content-center text-center  ">Loading ...</div>)
+         (<div className="flex items-center justify-center w-full  md:w-[600px] h-[500px] bg-gray-200 rounded-2xl animate-pulse content-center text-center  ">
+          <span className="border-2 border-blue-700 border-t-transparent w-7 h-7 rounded-full animate-spin "></span>
+         </div>)
         }
        </div>
        {/* ## TITLE && PRICE && DESCRIPTION */}
