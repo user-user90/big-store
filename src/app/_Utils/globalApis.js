@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const basUrl ="https://devoted-sparkle-117ce00640.strapiapp.com";
+const basUrl = process.env.NEXT_PUBLIC_STRAPI_URL
 const ApiKey = process.env.NEXT_PUBLIC_API_KEY;
 
 const axiosClient = axios.create({
