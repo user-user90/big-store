@@ -152,12 +152,12 @@ function Navbar(onClose) {
       {opentNavbar && (
         <div className="fixed inset-0 z-50 bg-white p-6 animate-in slide-in-from-left duration-300">
           {/* ## CLOSE MOBILE MENU BUTTON */}
-          <button onClick={() => setOpenNavbar(false)} className="text-gray-800 text-xl border border-gray-400 bg-transparent rounded-sm px-3 mt-2 my-6">X</button>
+          <button aria-label="Clos Icon Menu" onClick={() => setOpenNavbar(false)} className="text-gray-800 text-xl border border-gray-400 bg-transparent rounded-sm px-3 mt-2 my-6">X</button>
           
           {/* ## MOBILE NAVIGATION LINKS LIST */}
           <ul className="flex flex-col gap-6 text-xl text-gray-700 ">
              <li onClick={() => setOpenNavbar(false)}>
-               <Link href="/" className="hover:border-b hover:text-black ">All</Link>
+               <Link href="/search" className="hover:border-b hover:text-black ">All</Link>
              </li>
              {navBarLink?.map((link, index) => (
                <li key={index} onClick={() => setOpenNavbar(false)}>
